@@ -41,7 +41,7 @@ function App() {
   const handleClick = (e) => {
     e.preventDefault();
     let baseUrl =
-      "http://ytfinder.up.railway.app/ytag/api/tag_finder?url=" + url;
+      "https://ytfinder.up.railway.app/ytag/api/tag_finder?url=" + url;
     setTags([]);
     setIsLoading(true);
 

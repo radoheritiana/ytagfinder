@@ -42,6 +42,7 @@ function App() {
     e.preventDefault();
     let baseUrl =
       "https://ytfinder.up.railway.app/ytag/api/tag_finder?url=" + url;
+    setTags([]);
     setIsLoading(true);
 
     axios

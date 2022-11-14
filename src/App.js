@@ -41,7 +41,7 @@ function App() {
   const handleClick = (e) => {
     e.preventDefault();
     let baseUrl =
-      "https://ytfinder.up.railway.app/ytag/api/tag_finder?url=" + url;
+      "http://ytfinder.up.railway.app/ytag/api/tag_finder?url=" + url;
     setTags([]);
     setIsLoading(true);
 
@@ -49,8 +49,14 @@ function App() {
       .get(baseUrl)
       .then((response) => {
         if (response.status === 200) {
-          setErrorMessage("");
-          setTags(response.data.tags);
+          console.log(response.data);
+          if (response.data.success === true){
+            setErrorMessage("");
+            setTags(response.data.tags);
+          }
+          else{
+            setErrorMessage("Bad video url!");
+          }
         }
         setIsLoading(false);
       })
